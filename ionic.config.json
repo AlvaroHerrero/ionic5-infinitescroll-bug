@@ -1,0 +1,7 @@
+{
+  "name": "testScroll",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}

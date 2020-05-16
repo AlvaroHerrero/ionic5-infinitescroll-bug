@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import {Component, ViewChild} from '@angular/core';
+import {IonInfiniteScroll} from '@ionic/angular';
 
 @Component({
   selector: 'app-tab1',
@@ -7,6 +8,15 @@ import { Component } from '@angular/core';
 })
 export class Tab1Page {
 
-  constructor() {}
+  @ViewChild(IonInfiniteScroll, {static: false}) infiniteScroll: IonInfiniteScroll;
+  items = [...Array(20).keys()]
+
+  loadMore(evt){
+    setTimeout(() => {
+      this.items = [...this.items, ...Array(20).keys()];
+      // evt.target.complete();
+      this.infiniteScroll.complete();
+    }, 1000);
+  }
 
 }

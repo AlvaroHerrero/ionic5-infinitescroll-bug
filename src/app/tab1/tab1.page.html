@@ -8,12 +8,8 @@
 
 <ion-content [fullscreen]="true">
   <ion-infinite-scroll (ionInfinite)="loadMore($event)">
-    <ion-infinite-scroll-content loading-spinner="none">
-      <ion-infinite-scroll-content>
      <div *ngFor="let item of items; index as i">
        {{i}}
      </div>
-      </ion-infinite-scroll-content>
-    </ion-infinite-scroll-content>
   </ion-infinite-scroll>
 </ion-content>
